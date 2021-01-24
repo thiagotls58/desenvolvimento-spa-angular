@@ -1,0 +1,94 @@
+[1] O que é SPA?
+	-> Nas aplicações SPA, o html da página é carregado somente uma vez pelo servidor durante o início da aplicação, ou seja, na primeira requisição ao servidor. Nas requisições seguintes, uma vez que o client já possui o html, o servidor devolve somente arquivos JSON com os dados necessários para exibição da view. Dessa forma, a aplicação se torna mais rápida, uma vez que, arquivos JSON são menores em relação ao html caso ele fosse devolvido em toda requisição.
+
+[2] AngularJS vs Angular
+	-> AngularJS é um framework antigo, é baseada em javascript e utiliza os padrões MVC e MVVM.
+	-> Angular foi lançado em 2015 para substituir o AngularJS, ou seja, os dois são incompatíveis. O novo framework é baseado em typescript e utiliza o padrão Web Componentes.
+
+[3] Versionamento
+	-> Major: Número principal da versão
+	-> Minor: Novas features que não causam breaking change na major
+	-> Path: Correções de bugs
+
+	Para saber mais sobre versionamento: https://semver.org/lang/pt-BR/
+
+	-> Beta: Em fase de desenvolvimento e testes
+	-> Release Candidate: Desenvolvimento concluído, está em testes finais
+
+[4] Anatomia de uma App Angular
+	-> Modulos
+		* Componentes
+			- Template (html)
+			- Class
+				=> Properties
+				=> Methods
+			- Metadata: Possui informações sobre o componente como o template, css e testes
+		* Services
+
+[5] Angular CLI 
+	-> Documentação: https://cli.angular.io
+	-> Intalação: npm install -g @angular/cli
+	-> Criar um novo app: ng new MinhaAppAngular
+
+[6] Rodando a aplicação
+	-> Para iniciar a apliação em modo de desenvolvimento: ng serve ou ng s
+	-> Para iniciar a apliação em modo de produto: ng serve --prod ou ng s --prod
+	-> Para fazer o build da app: ng b
+	-> Para fazer o build de produção da app: ng b --prod
+
+[7] Componentes
+	-> Para criar um novo componente: ng generate component pasta/NomeComponente
+	-> O método ngOnInit das classes do componente, são invocados após o construtor
+
+[8] Modules e Decorators
+	-> O Decorator define o comportamento de uma classe do Angular
+	-> Para criar um novo modulo: ng g module NomeModulo
+		- declarations: Seus componentes
+		- imports: Seus modulos
+		- providers: Seus serviços
+	-> Para criar um Service: ng g service Servico
+
+
+[9] Criando a apliação
+	-> Criando o app Angular com o mínimo dos arquivos: ng new --minimal -g MeuProjeto
+
+[10] Tipos de Data Bindings
+
+	=> One-way Binding: 
+		-> Interpolation:
+			- O valor da variável vem do componte até a property, mas não faz o caminho contrário 
+				<label>Nome: {{ meuNome }} </label>
+		
+		-> Property Binding: 
+			- O valor da variável vem do componte até a property, mas não faz o caminho contrário
+			- Define o valor de uma propriedade de um elemento html
+				<img [src]="minhaUrl">
+		
+		-> Event Binding:
+			- Realiza chamada de um método do componente com base no evento do elemento HTML
+				<button (click)='clickContador()'> Enviar </button>
+
+	=> Two-way Binding:
+		-> Exibe e atualiza um dado nas duas direções (template, componente)
+			<input type="text" [(ngModel)]="evento.nome" />
+		-> É a união do Property Binding com Event Binding
+
+[11] Back-end fake
+	https://www.npmjs.com/package/json-server
+	=> Instalação: npm install -g json-server
+	=> Start Json Server: json-server --watch db.json
+
+
+[12] Atualizar as versões do MeuProjeto
+	https://www.npmjs.com/package/npm-check-updates
+	=> Instalar pacote npm que checa todas as atualizações: npm i npm-check-updates
+	=> Checar as atualizações dos pacotes: ncu
+	=> Realizar atualizações no package.json: ncu -u
+	=> Instalar pacotes: npm i
+	=> Compilar para produção, para verificar se está tudo certo: ng b --prod
+
+[13] Compilação com Ivy e entrega da apliação
+	https://angular.io/guide/ivy
+	=> Compilar para produção: ng b --prod
+	=> Rodar app em formato de produção: ng s --prod
+

@@ -1,0 +1,36 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Anjos e Demônios",
+            "valor": 19.90,
+            "promocao": false,
+            "valorPromo": 0,
+            "imagem": "anjos-e-demonios.png"
+        },
+        {
+            "id": 2,
+            "nome": "Código da Vinci",
+            "valor": 29.90,
+            "promocao": false,
+            "valorPromo": 0,
+            "imagem": "codigo-da-vinci.png"
+        },
+        {
+            "id": 3,
+            "nome": "O Símbolo Perdido",
+            "valor": 29.90,
+            "promocao": true,
+            "valorPromo": 22.90,
+            "imagem": "o-simbolo-perdido.png"
+        },
+        {
+            "id": 4,
+            "nome": "Inferno",
+            "valor": 29.90,
+            "promocao": true,
+            "valorPromo": 23.90,
+            "imagem": "inferno.png"
+        }
+    ]
+}
